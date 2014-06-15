@@ -1,0 +1,107 @@
+<div class="row" ng-controller="ManagerCtrl">
+    <div class="col-md-12">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Add Requirement</div>
+            <div class="panel-body">
+
+                <form novalidate class="css-form form-horizontal" role="form" name="form_add_requirement" id="form_add_requirement" ng-submit="requirement_add(requirement)">
+
+                    <div class="col-md-8">
+
+                                               
+                            <div class="form-group">
+                                <label for="features" class="col-md-4"> Features *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.features" class="form-control" id="features" required placeholder="features">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="number" class="col-md-4">Number *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.number" class="form-control" id="number" required placeholder="Number">
+                                </div>
+                            </div>  
+
+                            <div class="form-group">
+                                <label for="description" class="col-md-4">Description  *</label>
+                                <div class="col-md-3">
+                                    <input type="description" ng-model="requirement.description" class="form-control" id="description" required placeholder="Description">
+                                </div>
+                            </div>  
+
+
+                            <div class="form-group">
+                                <label for="priority" class="col-md-4">Priority *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.priority" class="form-control" id="priority" required placeholder="Priority">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="level" class="col-md-4">Level *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.level" class="form-control" id="level" required placeholder="Level">
+                                </div>
+                            </div>
+
+                           <div class="form-group">
+                                <label for="dependentDevelopment" class="col-md-4">Dependent development *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.dependentDevelopment" class="form-control" id="dependentDevelopment" required placeholder="DependentDevelopment">
+                                </div>
+                            </div>
+                        
+                        
+                        
+                           <div class="form-group">
+                                <label for="endDesiredDate" class="col-md-4">End desired date *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.endDesiredDate" class="form-control" id="endDesiredDate" required placeholder="endDesiredDate">
+                                </div>
+                            </div>
+                        
+                          
+                           <div class="form-group">
+                                <label for="collaborateur" class="col-md-4">Collaborateur *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.collaborateur" class="form-control" id="collaborateur" required placeholder="collaborateur">
+                                </div>
+                            </div>
+                        
+                        
+                           <div class="form-group">
+                                <label for="startDate" class="col-md-4">Start date *</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.startDate" class="form-control" id="startDate" required placeholder="startDate">
+                                </div>
+                            </div>
+                        
+                         <div class="form-group">
+                                <label for="percentageOfIncrease" class="col-md-4">Percentage of increase*</label>
+                                <div class="col-md-3">
+                                    <input type="text" ng-model="requirement.percentageOfIncrease" class="form-control" id="percentageOfIncrease" required placeholder="percentageOfIncrease">
+                                </div>
+                            </div>
+                        
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-6">
+                                    <button ng-disabled="!form_add_requirement.$valid"  type="submit" class="btn btn-success">Valid</button>
+                                    <button ng-click="reset()"  type="reset" class="btn btn-warning">Cancel</button>
+                                </div>
+                            </div>
+
+                        </div>     
+                </form> 
+
+                <div id="message"></div>
+                {{ message}}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,44 @@
+<div class="row" ng-controller="AdminCtrl">
+ 
+    <div class="panel panel-primary">
+               <div class="panel-heading">Display Projects</div>
+               <div class="panel-body">
+
+
+       <input type="text" ng-model="searchProject" placeholder="Search" autofocus>
+       <hr/>
+       <table class="table">
+           
+           <tr>
+               <th>Id</th>
+               <th>Name</th>
+               <th>Manager </th>
+               <th>Level</th>
+               <th>Functionality</th>
+               <th>Progress</th>
+               <th>Edit</th>
+               <th>Delete</th>
+           </tr>
+           <tr ng-repeat="project in projects | filter:searchProject">
+                <td> {{project.id}}</td>
+                <td> {{project.name}}</td>
+                <td> {{project.manager.name}}</td>
+                <td> {{project.level}}</td>
+                <td> {{project.functionality}}</td>
+                <td> {{project.progress}}</td>
+               <td><a class="btn btn-warning" href="#/admin/project_edit/{{project.id}}">Edit</a></td>
+               <td><a class="btn btn-danger" ng-click="project_delete(project.id)">Delete</a></td>
+           </tr>
+       </table>
+
+    
+       
+   </div> 
+   </div>   
+    
+    
+    
+</div>
+
+
+

@@ -1,0 +1,70 @@
+<div class="row" ng-controller="AdminCtrl">
+    <div class="col-md-12">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Modify Project</div>
+            <div class="panel-body">
+
+                <form novalidate class="css-form form-horizontal" role="form" name="form_modify_project" id="form_modify_project" method="post" ng-submit="project_edit(project)">
+
+                    
+                            <input id="id" name="id" type="hidden" value="{{project.id}}"  ng-model="project.id"/>
+                            
+                            <div class="form-group">
+                                <label for="name" class="col-md-2">Name *</label>
+                                <div class="col-md-3">
+                                    <input type="text" value="{{project.name}}" ng-model="project.name" class="form-control" id="name" required placeholder="Name">
+                                </div>
+                            </div>
+                            
+                             <div class="form-group">
+                                <label for="name" class="col-md-2">Manager *</label>
+                                <div class="col-md-3">
+                                    <input type="text" value="{{project.manager.id}}" ng-model="project.manager.id" class="form-control" id="manager" required placeholder="manager">
+                                </div>
+                            </div>
+                            
+  
+                            <div class="form-group">
+                                <label for="level" class="col-md-2">level *</label>
+                                <div class="col-md-3">
+                                    <input type="text" value="{{project.level}}" ng-model="project.level" class="form-control" id="level" required placeholder="level">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="functionality" class="col-md-2">functionality *</label>
+                                <div class="col-md-3">
+                                    <input type="text" value="{{project.functionality}}" ng-model="project.functionality" class="form-control" id="functionality" required placeholder="functionality">
+                                </div>
+                            </div>
+                            
+                             <div class="form-group">
+                                <label for="progress" class="col-md-2">progress *</label>
+                                <div class="col-md-3">
+                                    <input type="text" value="{{project.progress}}" ng-model="project.progress" class="form-control" id="progress" required placeholder="progress">
+                                </div>
+                            </div>
+                            
+            
+                            
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-3 col-md-4">
+                                    <button  type="submit" class="btn btn-success">Modify</button>       
+                            </div>
+
+                        </div>     
+                </form> 
+
+                <div id="message"></div>
+ {{ message}}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
