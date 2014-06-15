@@ -1,0 +1,20 @@
+<div class="row" ng-controller="ProductCtrl" ng-init="init()">
+    <form class="form-horizontal" ng-submit="edit(editProduct)" >
+        <fieldset>
+            <legend>Edit a product</legend>
+            
+             <input id="id" name="id" type="hidden" value="{{editProduct.id}}" placeholder="name" ng-model="editProduct.id"/>
+            <div class="control-group">
+                <label class="control-label" for="name">Name</label>
+                <div class="controls">
+                    <input id="name" name="name" type="text" placeholder="name" value="{{editProduct.name}}" ng-model="editProduct.name"/>  
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-success"><i class="icon-plus icon-white"></i> Edit</button>
+            </div>
+        </fieldset>
+    </form>
+    <table> 
+    {{ message}}
+</div>

@@ -1,0 +1,13 @@
+<div class="row" ng-controller="ProductCtrl">
+   
+    <input type="text" ng-model="searchProduct" placeholder="Chercher dans la liste" autofocus>
+    <hr>
+    <table class="table">
+        <tr ng-repeat="product in products | filter:searchProduct">
+            <td> {{product.id}}</td>
+            <td> {{product.name}}</td>
+            <td><a class="btn btn-success" href="#/product/{{product.id}}">Edit</a></td>
+            <td><a class="btn btn-danger" ng-click="delete(product.id)">Delete</a></td>
+        </tr>
+    </table>
+</div>
