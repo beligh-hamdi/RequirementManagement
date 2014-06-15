@@ -8,10 +8,10 @@ require_once('User.php');
  */
 class Collaborateur extends User {
         
-      /**
-     * @Column(type="string")
-     * @var string
-     */
+    /**
+    * @Column(type="string")
+    * @var string
+    */
      protected  $supervisor;
     
     function __construct() {

@@ -2,10 +2,11 @@
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-require_once('Exigence.php');
+//require_once('Exigence.php');
 
 /**
  * @Entity
+ * @Table(name="users")
  * @InheritanceType("SINGLE_TABLE")
  * @DiscriminatorColumn(name="profile", type="string")
  * @DiscriminatorMap({"user" = "User", "manager" = "Manager", "collaborateur" = "Collaborateur"})
@@ -50,14 +51,14 @@ class User
     
   
       /**
-     * @oneToMany(targetEntity="Exigence", mappedBy="user")
-     * @var Exigence[]
+     * @oneToMany(targetEntity="requirement", mappedBy="user")
+     * @var Requirement[]
      */
-     protected  $exigences = null;
+    protected  $requirement = null;
      
-     public function __construct()
+    public function __construct()
     {
-            $this->exigences = new ArrayCollection();
+        $this->requirement = new ArrayCollection();
     }
   
     
@@ -93,8 +94,8 @@ public function getDate_of_hire() {
     return $this->date_of_hire;
 }
 
-public function getExigences() {
-    return $this->exigences;
+public function getRequirements() {
+    return $this->requirements;
 }
 
 public function getContact() {
@@ -109,8 +110,8 @@ public function setDate_of_hire($date_of_hire) {
     $this->date_of_hire = $date_of_hire;
 }
 
-public function setExigences(Exigence $exigences) {
-    $this->exigences = $exigences;
+public function setRequirements(Requirement $requirements) {
+    $this->requirements = $requirements;
 }
 
 public function setContact($contact) {

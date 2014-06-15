@@ -14,27 +14,12 @@ app.config(['$routeProvider',function($routeProvider) {
                 controller: 'MainCtrl'
             })
             
-            /* Manager */
+            /* Admin  - Project */
+            .when('/admin/project_add', { templateUrl: 'Views/admin/project_add.html',controller: 'AdminCtrl'})
+            .when('/admin/project_edit/:id', { templateUrl: 'Views/admin/project_edit.html',controller: 'AdminCtrl'})
+            .when('/admin/project_list', { templateUrl: 'Views/admin/project_list.html',controller: 'AdminCtrl'})
             
-            .when('/add_manager', {
-                templateUrl: 'Views/admin/manager/add_manager.html',
-                controller: 'AdminCtrl'
-            })
-            
-             .when('/delete_manager', {
-                templateUrl: 'Views/admin/manager/delete_manager.html',
-                controller: 'AdminCtrl'
-            })
-            
-             .when('/liste_managers', {
-                templateUrl: 'Views/admin/manager/liste_managers.html',
-                controller: 'AdminCtrl'
-            })
-             
-            .when('/modify_manager', {
-                templateUrl: 'Views/admin/manager/modify_manager.html',
-                controller: 'AdminCtrl'
-            })
+
            
             /* Collaborator */
              .when('/add_collaborator', {
@@ -76,6 +61,9 @@ app.config(['$routeProvider',function($routeProvider) {
             .when('/product/add', {templateUrl: 'Views/product/add.html',controller: 'ProductCtrl'})
             .when('/product/:id', {templateUrl: 'Views/product/edit.html',controller: 'ProductCtrl'})
             .when('/product', {templateUrl: 'Views/product/list.html',controller: 'ProductCtrl'})
+    
+    /* Requirement */
+            .when('/manager/requirement_add', {templateUrl: 'Views/manager/requirement_add.html',controller: 'ManagerCtrl'})
                        
          /*
             .otherwise({

@@ -10,25 +10,28 @@ require_once('User.php');
 class Manager extends User{
 
     /**
-    * @OneToMany(targetEntity="Projet", mappedBy="manager")  
+    * @OneToMany(targetEntity="Project", mappedBy="manager")  
     */
-    protected  $projets = null;
+    protected  $projects = null;
      
-     function __construct() {
+    function __construct() {
          
          parent::__construct();
-         $this->projets = new \Doctrine\Common\Collections\ArrayCollection();
-     }
-
-     
-    public function getProjets() {
-        return $this->projets;
+         $this->projects = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function setProjets($projets) {
-        $this->projets = $projets;
+    
+    public function getProjects() {
+        return $this->projects;
     }
 
+    public function setProjets($projects) {
+        $this->projets = $projects;
+    }
+  public function addManagerProject($project)
+    {
+        $this->projects[] = $project;
+    }
 
   }
 ?>
